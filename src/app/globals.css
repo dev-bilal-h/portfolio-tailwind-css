@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+  overflow-x: hidden;
+}
+
+
+ /*Animate navbar link*/
+.link-hover {
+    position: relative;
+    display: inline-block;
+}
+
+.link-hover::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;  
+    background:dodgerblue;  
+    transition: width 0.3s ease, left 0.3s ease;  
+}
+
+.link-hover:hover::after {
+    width: 100%;
+    left: 0;
+}
+  
+/*Animate Profile pic for left side */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-slideInLeft {
+    animation: slideInFromLeft 1s ease-out;
+  }
+
+
+ /*Animate Hero Section for left conetent */ 
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);  
+    }
+    100% {
+      transform: translateY(0);  
+    }
+  }
+  
+  .animate-slideInFromBottom {
+    animation: slideInFromBottom 1s ease-out;  
+  }
+  
+
+  /* About Content for loader */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 3s linear infinite; 
+}
+
+
+/*Animation Techinal Skills for top side*/
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideFromTop {
+  animation: slideFromTop 0.8s ease-out forwards;
+}
+
+
+/*Animate for right side*/
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInFromRight 1s ease-out;
+}
+
+ 
+html {
+  scroll-behavior: smooth;
+}
